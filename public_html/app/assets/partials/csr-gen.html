@@ -1,0 +1,49 @@
+<div>
+   <div *ngIf="err">
+      <h4>An error has occurred</h4>
+      <p>{{errMsg}}</p>
+   </div>
+   <div *ngIf="!err && done">
+      {{dn.commonName}} csr and keys have been generated and emailed to you.
+
+       <p>Create a <a href='#' (click)="resetCSRForm()">new CSR</a> or select an open ticket from the list on the left.
+   </div>
+   <form [formGroup]="dn" (ngSubmit)="createKey(dn)" class="panel panel-default csr" *ngIf="!err && !done">
+      <div class="panel-heading">
+         Generate CSR
+      </div>
+      <div class="panel-body">
+         <div class="form-group">
+           <label for="commonName">CommonName</label>
+           <input [(ngModel)]="commonName" formControlName="commonName" placeholder="CommonName" />
+         </div>
+         <div class="form-group">
+            <label for="emailAddress">Email Address:</label>
+            <input [(ngModel)]="emailAddress" formControlName="emailAddress" placeholder="Email Address"/>
+         </div>
+         <div class="form-group">
+            <label for="organizationName">Organization Name:</label>
+            <input formControlName="organizationName" placeholder="Organization Name" />
+         </div>
+         <div class="form-group">
+            <label for="organizationalUnitName">Organizational Unit Name:</label>
+            <input formControlName="organizationalUnitName" placeholder="organizationUnitName" />
+         </div>
+         <div class="form-group">
+            <label for="localityName">City:</label>
+            <input formControlName="localityName" placeholder="localityName" />
+         </div>
+         <div class="form-group">
+            <label for="stateOrProvinceName">State/Province:</label>
+            <input formControlName="stateOrProvinceName" placeholder="stateOrProvinceName" />
+         </div>
+         <div class="form-group">
+            <label for="Country">Country (i.e. US):</label>
+            <input formControlName="countryName" placeholder="countryName" />
+         </div>
+      </div>
+      <div class="panel-footer">
+         <button type="submit">Generate CSR</button>
+      </div>
+   </form>
+</div>

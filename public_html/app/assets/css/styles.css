@@ -1,0 +1,23 @@
+#login-form {
+   width: 50%;
+   margin: 0 auto;
+}
+#auth {
+   margin: 10px;
+}
+.csr {
+   margin: 0 auto;
+}
+.logout-btn {
+   cursor: pointer;
+}
+.left-pane {
+   float: left;
+   width: 50%;
+   height: 100%;
+}
+.right-pane {
+   float: left;
+   width: 50%;
+   height: 100%;
+}

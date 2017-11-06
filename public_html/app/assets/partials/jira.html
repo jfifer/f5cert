@@ -1,0 +1,24 @@
+<div>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      Open F5/Certificate issues
+    </div>
+    <div class="panel-body">
+      <table style="width:100%">
+        <tr>
+          <th>ID</th>
+          <th>Assignee</th>
+          <th>Company</th>
+        </tr>
+        <tr *ngFor="let issue of jiraIssues">
+          <td (click)="getJiraIssue(issue.id)">{{issue.id}}</td>
+          <td>{{issue.fields.assignee.displayName}}</td>
+          <td>{{issue.fields.customfield_10909}}</td>
+        </tr>
+      </table>
+    </div>
+    <div class="panel-footer">
+
+    </div>
+  </div>
+</div>

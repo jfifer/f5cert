@@ -1,0 +1,6 @@
+node_modules
+node_modules/*
+public_html/node_modules
+public_html/node_modules/*
+public_html/keys
+public_html/keys/*
